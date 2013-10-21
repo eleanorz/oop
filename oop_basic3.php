@@ -13,19 +13,24 @@
  	function __construct($user_array)
  	{
  		$this->arr = $user_array;
+ 		echo "<h1>public array below</h1>";
  	}
 
- 	function print_table($array){
+ 	function print_table(){
+
+ 		var_dump($this->arr);
+
  		//this foreach loop declares all the headers
- 		echo "<tr>";
- 		foreach ($array[0] as $key => $value) {
- 			echo "<th> {$key} </th>";
- 		}
- 		echo "</tr>";
- 		//this foreach loop fills all the info
- 		foreach ($this->arr as $fruit => $product) {
- 			echo "<br>".$product;
- 		}
+ 		// echo "<table>";
+
+ 		// foreach($arr as $key=>$row)
+ 		// {
+ 		// 	echo "<th>".$key." </th>";
+ 			
+ 		// }
+ 		
+ 		// echo "</table>";
+
  	}
 
  	function print_select($user_selector){
@@ -43,8 +48,8 @@
 
  $test=new HTML_Helper($sample_array);
 
- $test->print_table();
- $test->print_select("juices");
+ $test->print_table($sample_array);
+ // $test->print_select("juices");
 
 
  ?>
