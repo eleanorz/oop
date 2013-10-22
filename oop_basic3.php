@@ -12,6 +12,7 @@
 
 	 	function print_table($array)
 	 	{
+	 		echo "<h1>Print Table Method</h1>";
 	 		echo "<table style='border:1px solid green;'>";
 	 		foreach ($array[0] as $key => $value){
 	 			echo "<th>".$key." </th>";
@@ -24,19 +25,24 @@
 	 				}
 	 			echo "</tr>";
 	 		}
-	 		echo "<table>";
+	 		echo "</table>";
 	 	}
 
 	 	function print_select($user_selector, $array){
-	 		echo "I am inside print_select";
+	 		echo "<h1>Print Select Method</h1>";
+	 		echo "<select name=".$user_selector.">";
+	 		foreach ($array as $key => $value) {
+	 			echo "<option value=".$value.">".$value."</option>";
+	 		}
+	 		echo "</select>";
 	 	}
 	 } 
 
 	 $sample_array=array(
-	 	array("first_name" => "eleanor", "last_name" => "zimm", "nick_name" => "unicorn"),  array("first_name" => "Michael", "last_name" => "Choi", "nick_name" => "Sensei")
-	 	); 
+	 	array("first_name" => "eleanor", "last_name" => "zimm", "nick_name" => "unicorn"),  array("first_name" => "Michael", "last_name" => "Choi", "nick_name" => "Sensei")	); 
+	 $sample_array2=array('pumpkin spice latte', 'pumpkin pie', 'pumpkin cookies', 'pumpkin squash casserole', 'pumpkin croissants', 'pumpkin shaped reeses cups');
 
 	 $test=new HTML_Helper();
 	 $test->print_table($sample_array);
-	 $test->print_select("juices",$sample_array);
+	 $test->print_select("types of pumpkin items",$sample_array2);
  ?>
